@@ -19,6 +19,7 @@ void TMU_init(const TMU_ConfigType * ConfigPtr)
 
 void TMU_start(uint8 index)
 {
+	functionsDet[index].start_flag=g_delay;
 	buff[lastIndex]= functionsDet[index];
 	lastIndex++;
 }
@@ -36,6 +37,10 @@ void TMU_Dispacher(void)
 
 	for(loop_index=0;loop_index<lastIndex;loop_index++)
 	{
+		if((g_delay-functionsDet[loop_index].start_flag) % functionsDet[loop_index].delay == 0)
+		{
+
+		}
 
 	}
 
