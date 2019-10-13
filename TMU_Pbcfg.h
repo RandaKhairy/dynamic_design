@@ -12,12 +12,14 @@
 
 #define PERIODDIC 0
 #define ONE_SHOT 1
+#define NUM_OF_FUNCTIONS 3
 
 typedef struct
 {
-	void (*functionPtr)(void) = NULL;
+	void(*functionPtr)(void);
 	uint8 delay;
 	uint8 state;
-};
+}TMU_FunctionStart;
+
 
 #endif /* TMU_PBCFG_H_ */
