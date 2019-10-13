@@ -360,7 +360,7 @@ void TIMER_delay(void(*ServiceFuncPtr)(void), uint8 delay)
 	PORTB = g_delay;
 }
 
-ISR(TIMER0_OVF_vect)
+ISR(TIMER1_COMPA_vect)
 {
 	g_delay++;
 }
