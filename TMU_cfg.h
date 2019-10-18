@@ -7,22 +7,30 @@
 
 #ifndef TMU_CFG_H_
 #define TMU_CFG_H_
-
 #include "std_types.h"
 
-#define TIMER0 0
-#define TIMER1 1
-#define TIMER2 2
+#define Max_buffer_size 5
 
-#define BUFFER_LENGTH 5
+#define Periodic 0
+#define One_Shot 1
 
-typedef struct
-{
-	uint8 Timer;
-	uint8 resolution;
-}TMU_ConfigType;
+#define Active 0
+#define Not_Active 1
 
 
-extern TMU_ConfigType TMU_cfg;
+#define NA 0xff
+
+//typedef  void (*Func_Ptr)(void);
+
+typedef struct {
+	void (*Pointer)(void);
+	uint8 delay;
+	uint8 Periodicity;
+	uint8 Tolerance;
+	uint8 Activation;
+	uint8 index;
+}TMU_Servicing_Functions;
+
+extern TMU_Servicing_Functions Functions_array[Max_buffer_size];
 
 #endif /* TMU_CFG_H_ */
